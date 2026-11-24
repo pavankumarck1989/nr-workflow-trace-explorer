@@ -1,0 +1,6 @@
+{
+  "schemaType": "NERDLET",
+  "id": "workflow-detail",
+  "displayName": "Workflow Detail",
+  "description": "Waterfall, entity map, timeline, latency, databases and logs for one workflow"
+}

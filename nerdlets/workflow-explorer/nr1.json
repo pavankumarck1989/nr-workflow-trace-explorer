@@ -1,0 +1,6 @@
+{
+  "schemaType": "NERDLET",
+  "id": "workflow-explorer",
+  "displayName": "Workflow Trace Explorer",
+  "description": "Summary of workflows with filters, state, human review, errors and span links"
+}

@@ -1,0 +1,6 @@
+{
+  "schemaType": "NERDPACK",
+  "id": "16550c73-4b63-41d5-9cec-ab689d327383",
+  "displayName": "Workflow Trace Explorer",
+  "description": "Explore long-running, asynchronous and human-in-the-loop workflows as one unit: stitched traces, waterfall, entity map, span links and logs."
+}

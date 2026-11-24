@@ -1,0 +1,7 @@
+{
+  "schemaType": "LAUNCHER",
+  "id": "launcher",
+  "displayName": "Workflow Trace Explorer",
+  "description": "Explore long-running workflows stitched across traces",
+  "rootNerdletId": "workflow-explorer"
+}

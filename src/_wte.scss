@@ -1,0 +1,1850 @@
+// Theme-neutral: neutral greys use rgba so they work on light and dark.
+$border: rgba(128, 138, 152, 0.3);
+$soft: rgba(128, 138, 152, 0.1);
+$softer: rgba(128, 138, 152, 0.05);
+$muted: rgba(128, 138, 152, 0.98);
+$accent: #0078bf;
+$bad: #d5252b;
+$warn: #e8a317;
+$good: #2a9d4a;
+
+.wte-page {
+  padding: 12px 20px 32px;
+  font-size: 13px;
+  line-height: 1.45;
+  box-sizing: border-box;
+}
+.wte-page *,
+.wte-page *::before,
+.wte-page *::after {
+  box-sizing: border-box;
+}
+.wte-muted {
+  color: $muted;
+}
+.wte-pad {
+  padding: 8px 12px;
+}
+.wte-bad {
+  color: $bad;
+  font-weight: 600;
+}
+.wte-errbox {
+  margin-bottom: 12px;
+  padding: 8px 10px;
+  border: 1px solid $bad;
+  border-left-width: 4px;
+  border-radius: 4px;
+  background: rgba(223, 45, 36, 0.08);
+}
+.wte-errbox-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: $bad;
+}
+.wte-errbox-msg {
+  margin-top: 4px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.wte-errbox pre {
+  max-height: 200px;
+  overflow: auto;
+  margin: 4px 0 0;
+  font-size: 11px;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.wte-empty {
+  padding: 36px;
+  color: $muted;
+  text-align: center;
+}
+.wte-mono {
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+}
+.wte-num {
+  text-align: right !important;
+  font-variant-numeric: tabular-nums;
+}
+
+// Header
+.wte-hero {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  margin-bottom: 10px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: linear-gradient(120deg, rgba(0, 120, 191, 0.14), rgba(0, 120, 191, 0.02) 60%);
+}
+.wte-hero h2 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+}
+.wte-sub {
+  margin-top: 2px;
+  color: $muted;
+  font-size: 12px;
+}
+.wte-back {
+  margin-bottom: 0;
+}
+.wte-back .wte-linkbtn {
+  font-weight: 500;
+}
+.wte-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 10px;
+  padding: 8px 16px;
+  border: 1px solid $border;
+  border-radius: 10px;
+  background: linear-gradient(120deg, rgba(0, 120, 191, 0.12), rgba(0, 120, 191, 0.02) 60%);
+}
+.wte-header h2 {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+  word-break: break-all;
+}
+.wte-controls {
+  margin-left: auto;
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+// Controls
+.wte-btn,
+.wte-input {
+  font: inherit;
+  color: inherit;
+  background: transparent;
+  border: 1px solid $border;
+  border-radius: 6px;
+  padding: 3px 10px;
+  height: 30px;
+}
+.wte-input {
+  min-width: 120px;
+}
+.wte-input:focus {
+  outline: none;
+  border-color: $accent;
+  box-shadow: 0 0 0 2px rgba(0, 120, 191, 0.2);
+}
+.wte-input option {
+  color: #1d252c;
+}
+.wte-btn {
+  cursor: pointer;
+  font-weight: 500;
+}
+.wte-btn:hover {
+  border-color: $accent;
+  color: $accent;
+  background: rgba(0, 120, 191, 0.06);
+}
+.wte-check {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+}
+
+// KPI cards
+.wte-kpis {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 8px;
+  margin: 0 0 10px;
+}
+.wte-kpi {
+  position: relative;
+  display: flex;
+  align-items: baseline;
+  flex-wrap: wrap;
+  gap: 2px 8px;
+  padding: 8px 12px 7px;
+  border: 1px solid $border;
+  border-radius: 8px;
+  overflow: hidden;
+  background: $softer;
+}
+.wte-kpi::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  height: 2px;
+  background: $muted;
+}
+.wte-kpi b {
+  display: inline;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.wte-kpi span {
+  color: $muted;
+  font-size: 12px;
+}
+.wte-kpi-blue::before {
+  background: $accent;
+}
+.wte-kpi-red::before {
+  background: $bad;
+}
+.wte-kpi-amber::before {
+  background: $warn;
+}
+.wte-kpi-grey::before {
+  background: $muted;
+}
+
+// Cards and toolbar
+.wte-card {
+  border: 1px solid $border;
+  border-radius: 8px;
+  padding: 8px 12px;
+  margin-bottom: 8px;
+}
+.wte-card-flush {
+  padding: 0;
+  overflow: hidden;
+}
+.wte-card-title {
+  font-size: 12px;
+  color: $muted;
+  margin-bottom: 4px;
+}
+.wte-toolbar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 8px 12px;
+  gap: 8px;
+  border-bottom: 1px solid $border;
+  flex-wrap: wrap;
+  background: $softer;
+}
+.wte-search {
+  flex: 0 1 320px;
+}
+.wte-toolbar select.wte-input {
+  flex: 0 0 auto;
+  width: auto;
+  min-width: 150px;
+}
+.wte-toolbar-end {
+  margin-left: auto;
+  display: inline-flex;
+  gap: 8px;
+  align-items: center;
+}
+.wte-filters {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  margin: 8px 0 12px;
+  flex-wrap: wrap;
+}
+.wte-banner {
+  padding: 4px 10px;
+  margin: 0 0 8px;
+  font-size: 12px;
+  border: 1px solid rgba(232, 163, 23, 0.5);
+  border-left: 4px solid $warn;
+  background: rgba(232, 163, 23, 0.1);
+  border-radius: 6px;
+}
+
+// Table
+.wte-table-wrap {
+  max-height: max(320px, calc(100vh - 240px));
+  overflow: auto;
+}
+.wte-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+.wte-table th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  text-align: left;
+  padding: 7px 12px;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: $muted;
+  white-space: nowrap;
+  background: rgba(244, 246, 249, 0.96);
+  border-bottom: 1px solid $border;
+}
+.wte-table td {
+  padding: 6px 12px;
+  border-bottom: 1px solid $soft;
+  vertical-align: middle;
+}
+.wte-clickable tbody tr {
+  cursor: pointer;
+  transition: background 0.08s;
+}
+.wte-clickable tbody tr:nth-child(even) {
+  background: $softer;
+}
+.wte-id {
+  max-width: 280px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $accent;
+}
+.wte-txn {
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wte-app {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 2px 10px;
+  border: 1px solid $border;
+  border-radius: 12px;
+  font-size: 12px;
+  white-space: nowrap;
+}
+.wte-pill-err {
+  display: inline-block;
+  min-width: 22px;
+  padding: 0 7px;
+  border-radius: 10px;
+  background: $bad;
+  color: #fff;
+  font-weight: 600;
+  text-align: center;
+}
+
+// State badges
+.wte-badge {
+  display: inline-block;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+  background: $soft;
+  border: 1px solid $border;
+  white-space: nowrap;
+}
+.wte-badge-running {
+  background: rgba(0, 120, 191, 0.18);
+  border-color: rgba(0, 120, 191, 0.5);
+}
+.wte-badge-waiting-for-human {
+  background: rgba(232, 163, 23, 0.2);
+  border-color: rgba(232, 163, 23, 0.6);
+}
+.wte-badge-retrying {
+  background: rgba(230, 110, 40, 0.2);
+  border-color: rgba(230, 110, 40, 0.6);
+}
+.wte-badge-completed {
+  background: rgba(60, 170, 80, 0.2);
+  border-color: rgba(60, 170, 80, 0.6);
+}
+.wte-badge-failed {
+  background: rgba(213, 37, 43, 0.2);
+  border-color: rgba(213, 37, 43, 0.6);
+}
+
+// Tabs
+.wte-tabs {
+  display: flex;
+  gap: 22px;
+  margin: 10px 0 8px;
+  border-bottom: 1px solid $border;
+}
+.wte-tabs button {
+  padding: 8px 2px;
+  cursor: pointer;
+  color: $muted;
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  font: inherit;
+  font-weight: 500;
+}
+.wte-tabs button:hover {
+  color: inherit;
+}
+.wte-tab-active {
+  color: inherit !important;
+  border-bottom-color: $accent !important;
+  font-weight: 600;
+}
+
+// Workflow overview strip
+.wte-strip {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+.wte-strip-inner {
+  position: relative;
+  height: 38px;
+  margin-top: 4px;
+}
+.wte-strip-gap {
+  position: absolute;
+  border: 1px dashed $warn;
+  border-radius: 4px;
+  color: $warn;
+  font-size: 11px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  background: rgba(232, 163, 23, 0.08);
+}
+
+// Waterfall
+.wte-wf-trace {
+  border: 1px solid $border;
+  border-radius: 10px;
+  margin-bottom: 6px;
+  overflow: hidden;
+}
+.wte-wf-thead {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  padding: 10px 14px;
+  background: $soft;
+  cursor: pointer;
+  flex-wrap: wrap;
+}
+.wte-caret {
+  display: inline-block;
+  width: 14px;
+  color: $muted;
+  text-align: center;
+  cursor: pointer;
+  flex: none;
+}
+.wte-wf {
+  width: 100%;
+}
+.wte-wf-row {
+  display: flex;
+  align-items: center;
+  min-height: 28px;
+  border-top: 1px solid $soft;
+  cursor: pointer;
+}
+.wte-wf-row:hover {
+  background: rgba(0, 120, 191, 0.08);
+}
+.wte-wf-axis {
+  cursor: default;
+  min-height: 30px;
+  background: $softer;
+}
+.wte-wf-axis:hover {
+  background: $softer;
+}
+.wte-wf-selected {
+  background: rgba(0, 120, 191, 0.16);
+}
+.wte-wf-name {
+  flex: 0 0 42%;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 8px;
+  overflow: hidden;
+}
+.wte-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex: none;
+  display: inline-block;
+}
+.wte-svc {
+  color: $muted;
+  flex: none;
+  max-width: 120px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wte-op {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wte-tag {
+  flex: none;
+  font-size: 10px;
+  padding: 0 6px;
+  border-radius: 8px;
+  border: 1px solid $border;
+  color: $muted;
+}
+.wte-tag-warn {
+  color: $warn;
+  border-color: $warn;
+}
+.wte-wf-bars {
+  position: relative;
+  flex: 1 1 auto;
+  height: 28px;
+  margin-right: 12px;
+}
+.wte-tick {
+  position: absolute;
+  top: 7px;
+  font-size: 10px;
+  color: $muted;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.wte-tick:first-child {
+  transform: none;
+}
+.wte-tick:last-child {
+  transform: translateX(-100%);
+}
+.wte-wf-bar {
+  position: absolute;
+  top: 8px;
+  height: 12px;
+  min-width: 2px;
+  border-radius: 3px;
+}
+.wte-wf-dur {
+  position: absolute;
+  top: 6px;
+  font-size: 10px;
+  color: $muted;
+  padding: 0 4px;
+  white-space: nowrap;
+}
+.wte-wf-log {
+  position: absolute;
+  top: 21px;
+  width: 5px;
+  height: 5px;
+  margin-left: -2px;
+  border-radius: 50%;
+  background: $muted;
+}
+.wte-wf-log-err {
+  background: $bad;
+}
+.wte-wf-gap {
+  text-align: center;
+  font-size: 12px;
+  color: $muted;
+  padding: 4px 0;
+}
+.wte-wf-gap-long {
+  color: $warn;
+  border-top: 1px dashed $warn;
+  border-bottom: 1px dashed $warn;
+  margin: 6px 0;
+  background: rgba(232, 163, 23, 0.08);
+}
+.wte-kv {
+  display: grid;
+  grid-template-columns: 90px 1fr;
+  gap: 3px 12px;
+  margin-bottom: 10px;
+}
+.wte-kv span {
+  color: $muted;
+}
+.wte-kv b {
+  font-weight: 500;
+  word-break: break-all;
+}
+.wte-entities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 8px;
+  align-items: center;
+  padding: 8px 14px;
+  border-top: 1px solid $soft;
+}
+.wte-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 2px 10px;
+  border: 1px solid $border;
+  border-radius: 12px;
+  font-size: 12px;
+}
+.wte-chip-link {
+  cursor: pointer;
+}
+.wte-chip-link:hover {
+  border-color: $accent;
+  color: $accent;
+}
+.wte-chip-err {
+  border-color: $bad;
+}
+
+// Logs, settings
+.wte-log {
+  display: flex;
+  gap: 12px;
+  padding: 2px 0;
+}
+.wte-diag {
+  padding: 10px 14px;
+  margin: 8px 0;
+  border: 1px solid $border;
+  border-left: 4px solid $muted;
+  background: $soft;
+  border-radius: 6px;
+}
+.wte-diag-error {
+  border-left-color: $bad;
+}
+
+.wte-settings textarea {
+  width: 100%;
+  font-family: ui-monospace, Menlo, monospace;
+  font-size: 12px;
+  background: transparent;
+  color: inherit;
+  border: 1px solid $border;
+  border-radius: 6px;
+  padding: 8px;
+}
+.wte-sortable {
+  cursor: pointer;
+  user-select: none;
+}
+.wte-sortable:hover {
+  color: $accent;
+}
+.wte-sort {
+  color: $accent;
+  font-size: 9px;
+}
+
+// Entity map
+.wte-map {
+  display: block;
+  margin: 0 auto;
+  color: inherit;
+}
+.wte-map-node {
+  cursor: pointer;
+}
+.wte-map-glyph {
+  font-size: 11px;
+  font-weight: 700;
+}
+.wte-map-label {
+  font-size: 12px;
+  font-weight: 600;
+  fill: currentColor;
+}
+.wte-map-sub {
+  font-size: 10px;
+  fill: $muted;
+}
+.wte-map-edge {
+  font-size: 10px;
+  fill: $muted;
+}
+.wte-wf-dim {
+  opacity: 0.3;
+}
+
+// Span side panel (light by default; dark theme below)
+.wte-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(520px, 92vw);
+  z-index: 50;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: #1d252c;
+  border-left: 1px solid $border;
+  box-shadow: -8px 0 24px rgba(0, 0, 0, 0.18);
+}
+.wte-panel-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 18px;
+  border-bottom: 1px solid $border;
+  background: linear-gradient(120deg, rgba(0, 120, 191, 0.12), rgba(0, 120, 191, 0.02) 70%);
+}
+.wte-panel-head h3 {
+  margin: 2px 0 0;
+  font-size: 16px;
+  font-weight: 700;
+  word-break: break-word;
+}
+.wte-panel-body {
+  flex: 1;
+  overflow-y: auto;
+  padding: 14px 18px 28px;
+}
+.wte-panel-title {
+  margin: 18px 0 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: $muted;
+}
+.wte-panel-filter {
+  width: 100%;
+  margin-bottom: 8px;
+}
+.wte-attrs {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 12px;
+}
+.wte-attrs td {
+  padding: 5px 8px;
+  border-bottom: 1px solid $soft;
+  vertical-align: top;
+}
+.wte-attr-key {
+  width: 38%;
+  color: $muted;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  word-break: break-all;
+}
+.wte-attr-val {
+  word-break: break-all;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+.wte-copy {
+  margin-left: 8px;
+  font-size: 10px;
+  color: $accent;
+  cursor: pointer;
+  visibility: hidden;
+  font-family: inherit;
+}
+.wte-attrs tr:hover .wte-copy {
+  visibility: visible;
+}
+.wte-underline {
+  text-decoration: underline;
+}
+
+.wte-panel-top {
+  z-index: 60;
+  width: min(620px, 94vw);
+}
+.wte-copy-on {
+  visibility: visible;
+  margin-left: 10px;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 11px;
+}
+.wte-msg {
+  margin: 0 0 6px;
+  padding: 10px 12px;
+  max-height: 260px;
+  overflow: auto;
+  white-space: pre-wrap;
+  word-break: break-word;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+  font-size: 12px;
+  background: rgba(128, 138, 152, 0.1);
+  border: 1px solid $border;
+  border-radius: 6px;
+}
+.wte-msg-json {
+  max-height: 320px;
+}
+
+// Logs list
+.wte-log-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+  margin: 4px 0 10px;
+}
+.wte-log-chips {
+  display: inline-flex;
+  gap: 6px;
+}
+.wte-lchip {
+  padding: 2px 10px;
+  border: 1px solid $border;
+  border-radius: 12px;
+  font-size: 12px;
+  cursor: pointer;
+  user-select: none;
+}
+.wte-lchip:hover {
+  border-color: $accent;
+}
+.wte-lchip-on {
+  background: rgba(0, 120, 191, 0.15);
+  border-color: $accent;
+  font-weight: 600;
+}
+.wte-lchip-error.wte-lchip-on {
+  background: rgba(213, 37, 43, 0.15);
+  border-color: $bad;
+}
+.wte-log-search {
+  min-width: 200px;
+}
+.wte-logtable {
+  border: 1px solid $border;
+  border-radius: 8px;
+  overflow: auto;
+  max-height: 460px;
+}
+.wte-logrow {
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  padding: 7px 12px;
+  border-bottom: 1px solid $soft;
+  cursor: pointer;
+  font-size: 12px;
+}
+.wte-logrow:last-child {
+  border-bottom: none;
+}
+.wte-logrow:hover {
+  background: rgba(0, 120, 191, 0.08);
+}
+.wte-logrow-on {
+  background: rgba(0, 120, 191, 0.16);
+}
+.wte-logrow-err {
+  box-shadow: inset 3px 0 0 $bad;
+}
+.wte-logrow-time {
+  flex: none;
+  color: $muted;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+.wte-logrow-svc {
+  flex: none;
+  width: 130px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  color: $muted;
+}
+.wte-logrow-msg {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-family: ui-monospace, Menlo, Consolas, monospace;
+}
+.wte-lvl {
+  flex: none;
+  display: inline-block;
+  min-width: 50px;
+  padding: 0 8px;
+  border-radius: 10px;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: center;
+  letter-spacing: 0.03em;
+  background: $soft;
+  color: $muted;
+}
+.wte-lvl-error,
+.wte-lvl-fatal {
+  background: rgba(213, 37, 43, 0.15);
+  color: $bad;
+}
+.wte-lvl-warn {
+  background: rgba(232, 163, 23, 0.2);
+  color: #9a6a00;
+}
+.wte-lvl-info {
+  background: rgba(0, 120, 191, 0.14);
+  color: $accent;
+}
+
+// Buttons styled as links (copy, back, jump-to-span)
+.wte-linkbtn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  font: inherit;
+  color: $accent;
+  cursor: pointer;
+  text-align: left;
+}
+.wte-linkbtn:hover {
+  filter: brightness(1.2);
+}
+// Visible keyboard focus for every interactive element
+.wte-page [tabindex]:focus-visible,
+.wte-panel [tabindex]:focus-visible,
+.wte-linkbtn:focus-visible,
+.wte-tabs button:focus-visible,
+.wte-btn:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: 1px;
+}
+.wte-copy {
+  margin-left: 8px;
+}
+
+// Entity views (map | timeline | latency)
+.wte-views-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+}
+.wte-seg {
+  display: inline-flex;
+  flex: 0 0 auto;
+  border: 1px solid $border;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.wte-seg button {
+  padding: 5px 14px;
+  background: none;
+  border: none;
+  color: $muted;
+  font: inherit;
+  cursor: pointer;
+}
+.wte-seg button + button {
+  border-left: 1px solid $border;
+}
+.wte-seg button:hover {
+  color: inherit;
+}
+.wte-seg .wte-seg-on {
+  background: $accent;
+  color: #fff;
+  font-weight: 600;
+}
+.wte-seg button:focus-visible {
+  outline: 2px solid $accent;
+  outline-offset: -2px;
+}
+.wte-range {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 8px;
+  font-size: 12px;
+}
+.wte-tl-wrap {
+  overflow: visible;
+}
+.wte-tl {
+  display: block;
+  color: inherit;
+  user-select: none;
+}
+.wte-tl-lane-alt {
+  fill: rgba(128, 138, 152, 0.07);
+}
+.wte-tl-lane {
+  fill: transparent;
+}
+.wte-tl-label {
+  font-size: 12px;
+  fill: currentColor;
+}
+.wte-tl-tick {
+  font-size: 10px;
+  fill: $muted;
+}
+.wte-tl-gap {
+  fill: rgba(232, 163, 23, 0.08);
+  stroke: $warn;
+  stroke-dasharray: 4 3;
+}
+.wte-tl-sel {
+  fill: rgba(0, 120, 191, 0.18);
+  stroke: $accent;
+}
+.wte-tl-bar {
+  cursor: pointer;
+}
+.wte-tl-bar:hover {
+  filter: brightness(1.2);
+}
+.wte-lat {
+  display: grid;
+  grid-template-columns: minmax(180px, 240px) 170px 1fr;
+  gap: 24px;
+  align-items: start;
+}
+.wte-lat-stats {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.wte-lat-stats div {
+  display: flex;
+  flex-direction: column;
+}
+.wte-lat-stats b {
+  font-size: 16px;
+}
+.wte-lat-on {
+  background: rgba(0, 120, 191, 0.16);
+}
+.wte-lat-bar {
+  display: inline-block;
+  width: 60px;
+  height: 6px;
+  margin-right: 6px;
+  background: $soft;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.wte-lat-bar span {
+  display: block;
+  height: 100%;
+  border-radius: 3px;
+}
+.wte-lat-table {
+  min-width: 0;
+}
+@media (max-width: 1100px) {
+  .wte-lat {
+    grid-template-columns: 1fr;
+  }
+}
+
+// Waterfall toolbar and error rows
+.wte-wf-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 12px;
+  margin-bottom: 6px;
+}
+.wte-wf-err {
+  background: rgba(213, 37, 43, 0.1);
+}
+.wte-wf-err:hover {
+  background: rgba(213, 37, 43, 0.18);
+}
+
+.wte-wf-actions {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 6px;
+}
+.wte-wf-actions .wte-btn {
+  height: 26px;
+  padding: 1px 10px;
+  font-size: 12px;
+}
+
+// Span links
+.wte-linkicon {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 11px;
+  color: $muted;
+}
+.wte-linkicon-cross {
+  color: #00a3a3;
+  font-weight: 700;
+}
+.wte-wf-link {
+  box-shadow: inset 3px 0 0 #00a3a3;
+}
+.wte-panel-tabs {
+  display: flex;
+  gap: 20px;
+  padding: 0 18px;
+  border-bottom: 1px solid $border;
+}
+.wte-panel-tabs button {
+  appearance: none;
+  padding: 8px 2px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  color: $muted;
+  font: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+.wte-panel-tabs .wte-tab-active {
+  color: inherit;
+  border-bottom-color: $accent;
+  font-weight: 600;
+}
+.wte-linkcard {
+  margin-bottom: 10px;
+  padding: 10px 12px;
+  border: 1px solid $border;
+  border-radius: 8px;
+}
+.wte-linkcard-cross {
+  border-color: #00a3a3;
+  box-shadow: inset 3px 0 0 #00a3a3;
+}
+.wte-linkdir {
+  color: $accent;
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+// Tabs: never inherit browser or platform button chrome
+.wte-tabs button {
+  appearance: none;
+  box-shadow: none;
+  border-radius: 0;
+  border-width: 0 0 2px;
+  border-style: solid;
+  border-color: transparent;
+  background: transparent;
+}
+
+// Dark theme (set by useTheme when the page text is light)
+.wte-page[data-theme='dark'] {
+  color-scheme: dark;
+
+  .wte-muted,
+  .wte-sub,
+  .wte-card-title,
+  .wte-attr-key,
+  .wte-panel-title,
+  .wte-tabs button,
+  .wte-panel-tabs button,
+  .wte-linkicon {
+    color: #9aa7b4;
+  }
+  .wte-tabs .wte-tab-active,
+  .wte-panel-tabs .wte-tab-active {
+    color: #fff !important;
+    border-bottom-color: #4cc2e8 !important;
+  }
+  .wte-tl-tick,
+  .wte-map-sub,
+  .wte-map-edge {
+    fill: #9aa7b4;
+  }
+  .wte-bad,
+  .wte-wf-err .wte-bad {
+    color: #ff7b7b;
+  }
+
+  .wte-card,
+  .wte-kpi,
+  .wte-wf-trace,
+  .wte-linkcard {
+    background: rgba(255, 255, 255, 0.03);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .wte-hero,
+  .wte-header {
+    background: linear-gradient(120deg, rgba(0, 163, 224, 0.2), rgba(0, 163, 224, 0.03) 60%);
+    border-color: rgba(255, 255, 255, 0.1);
+  }
+  .wte-toolbar,
+  .wte-wf-thead,
+  .wte-wf-axis {
+    background: rgba(255, 255, 255, 0.05);
+  }
+  .wte-input,
+  .wte-btn {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(255, 255, 255, 0.18);
+    color: #e6ebf0;
+  }
+  .wte-input::placeholder {
+    color: #7d8a97;
+  }
+  .wte-input option {
+    background: #1b2229;
+    color: #e6ebf0;
+  }
+  .wte-btn:hover {
+    border-color: #4cc2e8;
+    color: #4cc2e8;
+    background: rgba(76, 194, 232, 0.12);
+  }
+  .wte-seg {
+    border-color: rgba(255, 255, 255, 0.18);
+  }
+  .wte-seg .wte-seg-on {
+    background: #0b7fb0;
+  }
+
+  .wte-table th {
+    background: #1b2229;
+    color: #aab4c0;
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+  .wte-table td {
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+  }
+  .wte-wf-row {
+    border-top-color: rgba(255, 255, 255, 0.07);
+  }
+  .wte-wf-selected,
+  .wte-lat-on,
+  .wte-logrow-on {
+    background: rgba(0, 190, 190, 0.2);
+  }
+  .wte-wf-err {
+    background: rgba(255, 90, 90, 0.13);
+  }
+  .wte-wf-err:hover {
+    background: rgba(255, 90, 90, 0.2);
+  }
+  .wte-wf-link,
+  .wte-linkcard-cross {
+    box-shadow: inset 3px 0 0 #2dd4d4;
+  }
+  .wte-linkicon-cross {
+    color: #2dd4d4;
+  }
+  .wte-linkdir,
+  .wte-linkbtn,
+  .wte-copy {
+    color: #6cc7ee;
+  }
+  .wte-tl-lane-alt {
+    fill: rgba(255, 255, 255, 0.045);
+  }
+  .wte-tl-sel {
+    fill: rgba(76, 194, 232, 0.2);
+    stroke: #4cc2e8;
+  }
+  .wte-tag,
+  .wte-chip {
+    border-color: rgba(255, 255, 255, 0.16);
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .wte-panel {
+    background: #151b21;
+    color: #e6ebf0;
+    border-left-color: rgba(255, 255, 255, 0.12);
+    box-shadow: -8px 0 28px rgba(0, 0, 0, 0.6);
+  }
+  .wte-panel-head {
+    background: linear-gradient(120deg, rgba(0, 163, 224, 0.22), rgba(0, 163, 224, 0.03) 70%);
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+  .wte-panel-tabs {
+    border-bottom-color: rgba(255, 255, 255, 0.12);
+  }
+  .wte-attrs td {
+    border-bottom-color: rgba(255, 255, 255, 0.07);
+  }
+}
+
+.wte-linkcard-go {
+  margin-top: 8px;
+  height: 28px;
+  padding: 2px 10px;
+  font-size: 12px;
+}
+.wte-btn:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.wte-tag-link {
+  color: #00a3a3;
+  border-color: #00a3a3;
+}
+
+.wte-pill-link {
+  display: inline-block;
+  min-width: 20px;
+  padding: 0 7px;
+  border-radius: 10px;
+  background: #00a3a3;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.wte-views-toggle {
+  flex: 0 0 auto;
+  height: 26px;
+  padding: 1px 10px;
+  font-size: 12px;
+}
+
+// Entity card: fixed-height body, maximizable
+.wte-views-head {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.wte-views-head .wte-card-title {
+  flex: 1 1 280px;
+  margin: 0;
+}
+.wte-views-body {
+  height: 440px;
+  margin-top: 6px;
+  overflow: auto;
+}
+.wte-max {
+  position: fixed;
+  inset: 10px;
+  z-index: 40;
+  display: flex;
+  flex-direction: column;
+  margin: 0;
+  background: #fff;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.45);
+}
+.wte-max .wte-views-body {
+  flex: 1;
+  height: auto;
+  min-height: 0;
+}
+.wte-page[data-theme='dark'] .wte-max {
+  background: #11161b;
+}
+.wte-zoom {
+  display: inline-flex;
+  gap: 4px;
+}
+.wte-zoom .wte-btn {
+  height: 26px;
+  min-width: 30px;
+  padding: 1px 8px;
+}
+
+// Entity map cards
+.wte-map-view {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.wte-timebar {
+  flex: none;
+  overflow: hidden;
+  border-bottom: 1px solid rgba(128, 138, 152, 0.25);
+}
+.wte-map-view .wte-map-box {
+  flex: 1;
+  min-height: 0;
+}
+.wte-map-box {
+  width: 100%;
+  height: 100%;
+  min-height: 120px;
+  overflow: auto;
+}
+.wte-map {
+  margin: 0 auto;
+}
+.wte-map-card {
+  fill: rgba(128, 138, 152, 0.07);
+}
+.wte-map-node:hover .wte-map-card {
+  fill: rgba(0, 120, 191, 0.14);
+}
+.wte-map-track {
+  fill: rgba(128, 138, 152, 0.25);
+}
+.wte-map-pill {
+  fill: #fff;
+  stroke: rgba(128, 138, 152, 0.45);
+}
+.wte-page[data-theme='dark'] .wte-map-pill {
+  fill: #1b2229;
+}
+.wte-map-badge {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #fff;
+}
+.wte-map-flag {
+  font-size: 10px;
+  font-weight: 700;
+  fill: #0078bf;
+}
+.wte-map-flag-slow {
+  fill: #c97b00;
+}
+
+// Detail header on one line
+.wte-header-id {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  min-width: 0;
+}
+.wte-header-id h2 {
+  min-width: 0;
+}
+.wte-controls {
+  flex-wrap: nowrap;
+}
+.wte-controls select.wte-input,
+.wte-controls .wte-check,
+.wte-controls .wte-btn {
+  flex: 0 0 auto;
+  width: auto;
+  white-space: nowrap;
+}
+.wte-page .wte-linkbtn {
+  appearance: none;
+  background: none;
+  border: 0;
+  box-shadow: none;
+  padding: 0;
+  height: auto;
+  color: $accent;
+  cursor: pointer;
+  font: inherit;
+  white-space: nowrap;
+}
+.wte-page .wte-linkbtn:hover {
+  text-decoration: underline;
+}
+
+// App filter and active filters
+.wte-ms {
+  position: relative;
+}
+.wte-ms-btn b {
+  font-weight: 600;
+  max-width: 160px;
+  display: inline-block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  vertical-align: bottom;
+}
+.wte-ms-active {
+  border-color: $accent;
+}
+.wte-ms-pop {
+  position: absolute;
+  z-index: 30;
+  top: 34px;
+  left: 0;
+  width: 300px;
+  padding: 8px;
+  background: #fff;
+  color: #1d252c;
+  border: 1px solid $border;
+  border-radius: 8px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+}
+.wte-ms-pop .wte-input {
+  width: 100%;
+  color: #1d252c;
+}
+.wte-ms-actions {
+  display: flex;
+  justify-content: space-between;
+  margin: 6px 2px;
+  font-size: 12px;
+}
+.wte-ms-list {
+  max-height: 280px;
+  overflow: auto;
+}
+.wte-ms-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 6px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.wte-ms-item:hover {
+  background: rgba(0, 120, 191, 0.1);
+}
+.wte-ms-name {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.wte-page[data-theme='dark'] .wte-ms-pop {
+  background: #1b2229;
+  color: #e6ebf0;
+  border-color: rgba(255, 255, 255, 0.16);
+}
+.wte-page[data-theme='dark'] .wte-ms-pop .wte-input {
+  color: #e6ebf0;
+}
+.wte-filterbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px 8px;
+  margin: 0 0 8px;
+  font-size: 12px;
+}
+.wte-chip-x {
+  appearance: none;
+  background: none;
+  border: 0;
+  padding: 0 0 0 4px;
+  color: inherit;
+  font-size: 14px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.wte-custom-window {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+.wte-custom-n {
+  width: 70px;
+  min-width: 0;
+}
+
+.wte-state-map {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 6px 12px;
+  margin-bottom: 10px;
+}
+.wte-state-map label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  font-size: 12px;
+}
+.wte-state-map .wte-input {
+  width: 100%;
+}
+
+.wte-hil-yes {
+  font-weight: 600;
+  color: $accent;
+}
+.wte-page[data-theme='dark'] .wte-hil-yes {
+  color: #6cc7ee;
+}
+
+.wte-more {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 12px;
+  border-top: 1px solid $border;
+  font-size: 12px;
+  color: $muted;
+}
+
+// Waterfall: faint gridlines at the axis ticks (0, 25, 50, 75, 100%)
+.wte-wf-row:not(.wte-wf-axis) .wte-wf-bars {
+  background-image: linear-gradient(to right, rgba(128, 138, 152, 0.18) 1px, transparent 1px);
+  background-size: 25% 100%;
+}
+
+.wte-lat-total {
+  font-size: 15px;
+  font-weight: 700;
+  fill: currentColor;
+}
+.wte-lat-total-sub {
+  font-size: 10px;
+  fill: $muted;
+}
+
+// Workflow overview: a span map per trace
+.wte-strip-inner {
+  margin-top: 2px;
+}
+.wte-strip-trace {
+  position: absolute;
+  top: 0;
+}
+.wte-strip-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  height: 18px;
+  font-size: 11px;
+  white-space: nowrap;
+  overflow: visible;
+}
+.wte-strip-map {
+  display: block;
+  cursor: pointer;
+  border: 1px solid rgba(0, 120, 191, 0.4);
+  border-radius: 4px;
+  background: rgba(0, 120, 191, 0.07);
+}
+.wte-strip-map:hover {
+  background: rgba(0, 120, 191, 0.16);
+}
+.wte-strip-err .wte-strip-map {
+  border-color: rgba(213, 37, 43, 0.7);
+}
+.wte-strip-extra .wte-strip-map {
+  border: 1px dashed #00a3a3;
+}
+.wte-strip-bar {
+  cursor: pointer;
+}
+.wte-strip-bar:hover {
+  filter: brightness(1.3);
+}
+.wte-strip-linkbadge {
+  min-width: 16px;
+  height: 16px;
+  padding: 0 4px;
+  border-radius: 8px;
+  background: #00a3a3;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 700;
+  line-height: 16px;
+  text-align: center;
+}
+
+// Overlapping traces sit on separate rows; a tall overview scrolls
+.wte-strip {
+  max-height: 280px;
+  overflow-y: auto;
+}
+.wte-strip-jump {
+  cursor: pointer;
+}
+.wte-strip-jump:hover b {
+  color: $accent;
+  text-decoration: underline;
+}
+.wte-strip-gap {
+  align-items: flex-start;
+  padding-top: 6px;
+}
+
+// Trace chips above the overview
+.wte-tchips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 64px;
+  margin-bottom: 8px;
+  overflow-y: auto;
+}
+.wte-tchip {
+  appearance: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: 26px;
+  padding: 0 10px;
+  background: transparent;
+  color: inherit;
+  border: 1px solid $border;
+  border-radius: 13px;
+  font: inherit;
+  font-size: 12px;
+  white-space: nowrap;
+  cursor: pointer;
+}
+.wte-tchip:hover,
+.wte-tchip:focus-visible {
+  border-color: $accent;
+  background: rgba(0, 120, 191, 0.1);
+  outline: none;
+}
+.wte-tchip-on {
+  border-color: $accent;
+  background: rgba(0, 120, 191, 0.18);
+  font-weight: 600;
+}
+.wte-tchip-err {
+  border-color: rgba(213, 37, 43, 0.7);
+}
+.wte-tchip-extra {
+  border-style: dashed;
+  border-color: #00a3a3;
+}
+.wte-strip-hot {
+  position: absolute;
+  pointer-events: none;
+  border: 2px solid $accent;
+  border-radius: 6px;
+}
+.wte-page[data-theme='dark'] .wte-tchip {
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.wte-page[data-theme='dark'] .wte-tchip:hover,
+.wte-page[data-theme='dark'] .wte-tchip-on {
+  border-color: #4cc2e8;
+}
+
+.wte-open-entity {
+  margin-left: 6px;
+}
+.wte-map-open {
+  cursor: pointer;
+  font-size: 13px;
+  opacity: 0.7;
+}
+.wte-map-open:hover,
+.wte-map-open:focus {
+  opacity: 1;
+}
+
+.wte-tchip-mode {
+  border-style: solid;
+  font-weight: 600;
+}
+.wte-search {
+  flex: 1 1 360px;
+  max-width: 560px;
+  min-width: 240px;
+}
+.wte-search > *,
+.wte-search input {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.wte-strip-title {
+  font-weight: 600;
+  max-width: 340px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.wte-tchip-title {
+  max-width: 220px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-weight: 600;
+}
+
+.wte-perf-chart {
+  height: 170px;
+  margin-bottom: 8px;
+}
+.wte-perf-billboard {
+  height: 90px;
+}
+
+.wte-wf-scroll {
+  overflow-y: auto;
+  border-top: 1px solid $soft;
+}
+.wte-wf-fixed .wte-wf-row {
+  height: 29px;
+  min-height: 29px;
+  box-sizing: border-box;
+}
+
+.wte-charts {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.wte-charts .wte-card {
+  margin: 0;
+  min-width: 0;
+}
+@media (max-width: 1100px) {
+  .wte-charts {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+.wte-over-time {
+  width: 100%;
+  height: 190px;
+}
+
+// Row hover: a tint plus an accent bar on the left, clear in light and dark.
+// Table rows are tinted through their cells, which browsers paint reliably
+// (a background or shadow on the <tr> itself can be hidden behind the cells).
+.wte-page .wte-table tbody tr:hover td {
+  background: rgba(0, 120, 191, 0.16);
+}
+.wte-page .wte-table tbody tr:hover td:first-child {
+  box-shadow: inset 3px 0 0 #0078bf;
+}
+.wte-page .wte-wf-row:not(.wte-wf-axis):hover,
+.wte-page .wte-logrow:hover {
+  background: rgba(0, 120, 191, 0.16);
+  box-shadow: inset 3px 0 0 #0078bf;
+}
+.wte-page .wte-wf-row.wte-wf-err:hover {
+  background: rgba(213, 37, 43, 0.2);
+  box-shadow: inset 3px 0 0 #d5252b;
+}
+.wte-page .wte-wf-row.wte-wf-selected:hover {
+  background: rgba(0, 120, 191, 0.26);
+}
+.wte-page[data-theme='dark'] {
+  .wte-table tbody tr:hover td {
+    background: rgba(76, 194, 232, 0.2);
+  }
+  .wte-table tbody tr:hover td:first-child {
+    box-shadow: inset 3px 0 0 #4cc2e8;
+  }
+  .wte-wf-row:not(.wte-wf-axis):hover,
+  .wte-logrow:hover {
+    background: rgba(76, 194, 232, 0.2);
+    box-shadow: inset 3px 0 0 #4cc2e8;
+  }
+  .wte-wf-row.wte-wf-err:hover {
+    background: rgba(255, 90, 90, 0.26);
+    box-shadow: inset 3px 0 0 #ff7b7b;
+  }
+  .wte-wf-row.wte-wf-selected:hover {
+    background: rgba(0, 190, 190, 0.32);
+  }
+}
